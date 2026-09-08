@@ -1,0 +1,109 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  place-items: center;
+  color: #fff;
+  background: radial-gradient(circle at 50% 15%, #283b68, #0a1020 65%);
+  font-family: monospace;
+}
+
+.game-shell {
+  position: relative;
+  width: min(960px, 100%);
+  box-shadow: 0 18px 60px #000;
+}
+
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  background: #12213b;
+  image-rendering: pixelated;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  padding: 28px;
+  place-content: center;
+  text-align: center;
+  background: linear-gradient(#080e1bb8, #080e1be8);
+}
+
+.panel {
+  max-width: 620px;
+}
+
+.title {
+  margin: 0 0 18px;
+  color: #ffe16b;
+  font-size: clamp(28px, 5vw, 52px);
+  line-height: 1.05;
+  text-shadow: 4px 4px #6a3a20;
+}
+
+.subtitle {
+  margin: 0 0 20px;
+  color: #b8d6ff;
+  line-height: 1.55;
+}
+
+.buttons {
+  display: grid;
+  max-width: 330px;
+  margin: auto;
+  gap: 12px;
+}
+
+button {
+  padding: 14px 20px;
+  border: 3px solid #ffe16b;
+  color: #fff;
+  background: #324f88;
+  box-shadow: 4px 4px #14233e;
+  cursor: pointer;
+  font: 700 18px monospace;
+  letter-spacing: 1px;
+}
+
+button:hover,
+button:focus {
+  outline: 3px solid #fff;
+  background: #547bc2;
+}
+
+button.secondary {
+  background: #37445e;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay.victory {
+  background: radial-gradient(circle, #315d3b, #101d20 75%);
+}
+
+.overlay.game-over {
+  background: radial-gradient(circle, #6c2632, #170b18 75%);
+}
+
+.overlay.victory .title {
+  color: #ffe16b;
+  text-shadow: 4px 4px #33633b;
+}
+
+.overlay.game-over .title {
+  color: #ff8893;
+  text-shadow: 4px 4px #5d1721;
+}
